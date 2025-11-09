@@ -14,15 +14,34 @@ It allows users to chat with an AI assistant (powered by Llama 3.2 3B Instruct v
 ✅ Cyclic popup reminders for summarization every few messages
 ✅ OpenAPI-powered API documentation
 
-🖼️ Screenshots
-Chat Interface	
-	<img width="1439" height="785" alt="ChatUI" src="https://github.com/user-attachments/assets/d4638747-76a8-4faf-8c5e-8552276b1b96" />
+## 🖼️ Screenshots
 
-Summary View	
+### 💬 Chat Interface  
+<img src="https://github.com/user-attachments/assets/d4638747-76a8-4faf-8c5e-8552276b1b96"
+     alt="Chat UI"
+     style="width:80%; border-radius:10px; margin:10px 0;" />
 
-<img width="1440" height="794" alt="SummaryUI" src="https://github.com/user-attachments/assets/13a921c6-1acf-447f-8278-cd244e942c43" />
+### 🧾 Summary View  
+<img src="https://github.com/user-attachments/assets/13a921c6-1acf-447f-8278-cd244e942c43"
+     alt="Summary UI"
+     style="width:80%; border-radius:10px; margin:10px 0;" />
 
-Insights Page
+### 🔍 Insights Page  
+<img src="https://github.com/user-attachments/assets/18c320c1-5d6b-42ff-8f4a-20a039a35e0d"
+     alt="Insights"
+     style="width:80%; border-radius:10px; margin:10px 0;" />
 
-<img width="1440" height="790" alt="Insight" src="https://github.com/user-attachments/assets/18c320c1-5d6b-42ff-8f4a-20a039a35e0d" />
+### 🔎 Search UI  
+<img src="https://github.com/user-attachments/assets/db64c971-597a-4620-a1cb-9e2353a35de2"
+     alt="Search"
+     style="width:80%; border-radius:10px; margin:10px 0;" />
+
+### ⚙️ Other Screens  
+<img src="https://github.com/user-attachments/assets/5fe12df1-de96-418f-a801-78136fd655a4"
+     alt="End Summary Popup"
+     style="width:80%; border-radius:10px; margin:10px 0;" />
+
+<img src="https://github.com/user-attachments/assets/3c4d751b-6b40-46c2-a153-6aa977b898ce"
+     alt="Delete Confirmation"
+     style="width:80%; border-radius:10px; margin:10px 0;" />
 
