@@ -11,7 +11,6 @@ def chat_completion(messages, max_tokens=2000, temperature=0.7):
 
     url = f"{AI_BASE_URL}/v1/chat/completions"
 
-    # ✅ Enhanced system prompt with Markdown and conversational follow-ups
     formatting_system_prompt = {
         "role": "system",
         "content": (
@@ -40,7 +39,6 @@ def chat_completion(messages, max_tokens=2000, temperature=0.7):
         ),
     }
 
-    # Optionally inject a dynamic user message to encourage continuity
     closing_suggestions = [
         "Would you like to dive deeper into this topic?",
         "Want me to suggest related concepts?",
@@ -50,7 +48,6 @@ def chat_completion(messages, max_tokens=2000, temperature=0.7):
         "Would you like to explore next steps or similar topics?"
     ]
 
-    # Combine system + user messages
     enhanced_messages = [formatting_system_prompt] + messages
 
     payload = {
@@ -66,6 +63,5 @@ def chat_completion(messages, max_tokens=2000, temperature=0.7):
     data = response.json()
     content = data["choices"][0]["message"]["content"]
 
-    # Append a random natural follow-up question
     follow_up = f"\n\n💬 {random.choice(closing_suggestions)}"
     return content.strip() + follow_up

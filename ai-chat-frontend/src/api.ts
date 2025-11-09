@@ -51,7 +51,7 @@ export async function endConversation(conversationId: number) {
   const res = await fetch(`${BASE_URL}/conversations/${conversationId}/end/`, {
     method: "POST"
   });
-  return res.json();  // ✅ important! we need summary returned
+  return res.json(); 
 }
 
 export async function askIntelligence(conversationId: number, question: string) {

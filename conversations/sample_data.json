@@ -1,0 +1,32 @@
+[
+  {
+    "model": "conversations.conversation",
+    "pk": 1,
+    "fields": {
+      "title": "Monthly Medicine Purchase",
+      "started_at": "2025-11-07T12:00:00Z",
+      "status": "ended",
+      "summary": "The user discussed their monthly medicine purchase summary and budget tracking."
+    }
+  },
+  {
+    "model": "conversations.message",
+    "pk": 1,
+    "fields": {
+      "conversation": 1,
+      "sender": "user",
+      "content": "Can you help me summarize my medicine expenses for October?",
+      "timestamp": "2025-11-07T12:02:00Z"
+    }
+  },
+  {
+    "model": "conversations.message",
+    "pk": 2,
+    "fields": {
+      "conversation": 1,
+      "sender": "ai",
+      "content": "You purchased 12 medicines totaling ₹2,400. Discounts applied: ₹150. Net: ₹2,250.",
+      "timestamp": "2025-11-07T12:02:30Z"
+    }
+  }
+]
