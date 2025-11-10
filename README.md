@@ -55,6 +55,12 @@ It allows users to chat with an AI assistant (powered by Llama 3.2 3B Instruct v
      alt="Delete Confirmation"
      style="width:80%; border-radius:10px; margin:10px 0; box-shadow:0 0 8px rgba(0,0,0,0.1);" />
 
+### DarkMode 
+<img src="https://github.com/user-attachments/assets/a4b0b4b5-340f-40ec-ac7f-b4f678826e11"
+     alt="DarkMode"
+     style="width:80%; border-radius:10px; margin:10px 0; box-shadow:0 0 8px rgba(0,0,0,0.1);" />
+
+
 # ⚙️ Setup Instructions
 
 🧩 1. Clone the repository
