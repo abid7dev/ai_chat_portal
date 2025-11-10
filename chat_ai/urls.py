@@ -6,7 +6,7 @@ def home(request):
     return HttpResponse("<h2>AI Chat Portal Backend is running 🚀</h2>")
 
 urlpatterns = [
-     path('', home),  # 👈 homepage
+     path('', home),  
     path('admin/', admin.site.urls),
-    path('api/', include('conversations.urls')),  # 👈 add this line
+    path('api/', include('conversations.urls')),  
 ]

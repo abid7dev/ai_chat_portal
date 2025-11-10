@@ -30,7 +30,7 @@ export default function IntelligenceView({
   conversationInfo,
 }: Props) {
   return (
-    <div className="flex-1 overflow-y-auto bg-white">
+    <div className="flex-1 overflow-y-auto bg-white dark:bg-background-dark">
       <div className="max-w-4xl mx-auto p-6">
         {/* Conversation metadata panel */}
         {conversationInfo && (

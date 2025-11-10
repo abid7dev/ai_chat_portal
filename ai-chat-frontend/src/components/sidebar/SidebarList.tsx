@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { Dispatch, RefObject, SetStateAction } from "react";
 import type { Conversation } from "./Sidebar";
 import { MessageSquare, MoreVertical, Star } from "lucide-react";
@@ -20,6 +21,7 @@ interface Props {
   >;
   onSummary: (id: number, summary: string) => void;
   menuRef: RefObject<HTMLDivElement | null>;
+  isCollapsed?: boolean;
 }
 
 export default function SidebarList({
@@ -37,9 +39,26 @@ export default function SidebarList({
   setDeleteConfirm,
   onSummary,
   menuRef,
+  isCollapsed,
 }: Props) {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    let timeout: number;
+    if (!isCollapsed) {
+      timeout = window.setTimeout(() => setShowContent(true), 400);
+    } else {
+      setShowContent(false);
+    }
+    return () => clearTimeout(timeout);
+  }, [isCollapsed]);
+
   return (
-    <div className="flex-1 overflow-y-auto py-2">
+    <div
+      className={`flex-1 overflow-y-auto py-2 transition-opacity duration-300 ${
+        showContent ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="space-y-1 px-2">
         {filtered.map((conv) => (
           <div

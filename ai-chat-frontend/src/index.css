@@ -1,8 +1,49 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* 🎨 Universal Theme — Light + Dark Modes */
+@theme {
+  /* 🌞 LIGHT MODE (Default) */
+  --color-accent: #6366f1; /* Indigo accent */
+  --color-accent-hover: #4f46e5;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-error: #ef4444;
+  --color-info: #0ea5e9;
 
-/* =========================================================
-   ✨ Core Animations for App UI
-   ========================================================= */
+  --color-background: #ffffff; /* Main background */
+  --color-background-alt: #f9fafb; /* Panels, cards */
+  --color-surface: #f3f4f6; /* Elevated surfaces */
+
+  --color-text: #111827; /* Primary text */
+  --color-text-secondary: #374151; /* Secondary text */
+  --color-text-muted: #6b7280; /* Muted labels */
+
+  --color-border: #e5e7eb;
+
+  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 4px 6px rgba(0, 0, 0, 0.15);
+
+  /* 🌙 DARK MODE */
+  --color-accent-dark: #818cf8; /* Lighter indigo for dark mode */
+  --color-accent-hover-dark: #6366f1;
+  --color-success-dark: #22c55e;
+  --color-warning-dark: #eab308;
+  --color-error-dark: #f87171;
+  --color-info-dark: #38bdf8;
+
+  --color-background-dark: #0b0f19; /* Base dark background */
+  --color-background-alt-dark: #121826; /* Panels / cards */
+  --color-surface-dark: #1c2433; /* Elevated surfaces */
+
+  --color-text-dark: #f9fafb; /* Primary text */
+  --color-text-secondary-dark: #d1d5db;
+  --color-text-muted-dark: #9ca3af;
+
+  --color-border-dark: #2c3545;
+
+  --shadow-soft-dark: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-strong-dark: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
 
 @keyframes fadeIn {
   0% {
@@ -60,10 +101,6 @@
   animation: slideDownFadeIn 0.35s ease-out;
 }
 
-/* =========================================================
-   💬 Sidebar Animations
-   ========================================================= */
-
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
@@ -92,18 +129,10 @@
   animation: slideOutLeft 0.35s ease-in forwards;
 }
 
-/* =========================================================
-   🪄 Button Hover Effects
-   ========================================================= */
-
 .send-btn:hover {
   transform: scale(1.05);
   transition: transform 0.15s ease;
 }
-
-/* =========================================================
-   🧩 Utility Transitions
-   ========================================================= */
 
 .sidebar-transition {
   transition: transform 0.35s ease, opacity 0.25s ease, width 0.3s ease;

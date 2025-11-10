@@ -8,7 +8,7 @@ export default function SummaryPrompt({
   onSummarize,
 }: SummaryPromptProps) {
   return (
-    <div className="absolute top-16 right-6 z-50 animate-slideDownFadeIn">
+    <div className="absolute top-16 right-6 z-50 animate-slideDownFadeIn ">
       <div className="bg-white shadow-xl border border-gray-200 rounded-xl p-4 w-80">
         <h3 className="text-sm font-semibold text-gray-800 mb-1">
           💡 End Conversation?

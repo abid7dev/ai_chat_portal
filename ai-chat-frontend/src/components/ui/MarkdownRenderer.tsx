@@ -45,7 +45,6 @@ export default function MarkdownRenderer({ content }: Props) {
     <>
       <style>
         {`
-          /* 🚫 Remove all Tailwind prose background/padding for <pre> */
           .prose pre {
             background-color: transparent !important;
             box-shadow: none !important;
@@ -58,7 +57,7 @@ export default function MarkdownRenderer({ content }: Props) {
         `}
       </style>
 
-      <div className="prose max-w-none prose-gray">
+      <div className="prose max-w-none prose-gray ">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{

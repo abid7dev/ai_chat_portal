@@ -1,10 +1,10 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import SidebarHeader from "./SidebarHeader";
 import SidebarActions from "./SidebarActions";
 import SidebarList from "./SidebarList";
 import SidebarSearchDialog from "./SidebarSearchDialog";
 import DeleteDialog from "./DeleteDialog";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import {
   useConversations,
   useResponsiveSidebar,
@@ -72,6 +72,19 @@ export default function Sidebar({
     useResponsiveSidebar();
   useOutsideClick(menuRef, () => setMenuOpen(null));
 
+  // 🌗 Theme management
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light"
+    );
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
   return (
     <>
       {isMobile && (
@@ -100,11 +113,11 @@ export default function Sidebar({
       )}
 
       <div
-        className={`fixed md:relative h-full flex flex-col z-40 bg-gray-900 text-white
-    transform transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
-    ${isOpen ? "translate-x-0" : "-translate-x-full"}
-    ${isCollapsed ? "md:w-16" : "md:w-80"}
-  `}
+        className={`fixed md:relative  h-full flex flex-col z-40 bg-gray-900 text-white
+          transform transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
+          ${isCollapsed ? "md:w-16" : "md:w-80"}
+        `}
       >
         <SidebarHeader
           isOpen={isOpen}
@@ -117,11 +130,15 @@ export default function Sidebar({
           <>
             <SidebarActions
               isOpen={isOpen}
+              isCollapsed={isCollapsed}
               handleNewChat={handleNewChat}
               search={search}
               setSearch={setSearch}
               setShowSearchDialog={setShowSearchDialog}
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
             />
+
             <SidebarList
               activeId={activeId}
               filtered={filtered}
@@ -143,11 +160,14 @@ export default function Sidebar({
 
         {isOpen && isCollapsed && (
           <SidebarActions
-            isOpen={false}
+            isOpen={isOpen}
+            isCollapsed={isCollapsed}
             handleNewChat={handleNewChat}
             search={search}
             setSearch={setSearch}
             setShowSearchDialog={setShowSearchDialog}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
           />
         )}
       </div>

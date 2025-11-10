@@ -24,16 +24,16 @@ export default function ChatHeader({
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 border-b border-gray-200 bg-white">
+      <header className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700  dark:bg-background-dark transition-colors">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
             <Bot size={18} className="text-white" />
           </div>
           <div>
-            <h1 className="font-semibold text-gray-900">
+            <h1 className="font-semibold text-gray-900 dark:text-white">
               {intelligenceMode ? "Conversation Intelligence" : "AI Assistant"}
             </h1>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-500 dark:text-text-muted-dark">
               {intelligenceMode
                 ? "Ask questions about this conversation"
                 : "Always here to help"}
@@ -72,7 +72,6 @@ export default function ChatHeader({
         )}
       </header>
 
-      {/* ✅ Confirmation Modal */}
       {showConfirm && (
         <ConfirmDialog
           title="Clear All Insights?"

@@ -149,7 +149,6 @@ export default function ChatPage() {
     initializeChat();
   }, []);
 
-  // Show summary prompt every 4 messages
   useEffect(() => {
     if (conversationStatus === "ended") return;
     if (totalMessageCount > 0 && totalMessageCount % 4 === 0) {
@@ -194,7 +193,6 @@ export default function ChatPage() {
     setInsights(stored ? JSON.parse(stored) : []);
   };
 
-  // ✨ ChatGPT-style typing assistant
   const handleSend = async () => {
     if (!input.trim() || !conversationId || generatingSummary) return;
     if (conversationStatus === "ended") return;
@@ -204,14 +202,12 @@ export default function ChatPage() {
     setInput("");
     setSummaryView(null);
 
-    // Add user message
     setMessages((prev) => [
       ...prev,
       { sender: "user", content: text, timestamp: userTimestamp },
     ]);
     setTotalMessageCount((prev) => prev + 1);
 
-    // Typing placeholder
     setMessages((prev) => [
       ...prev,
       { sender: "assistant", content: "", type: "typing" },
@@ -391,7 +387,7 @@ export default function ChatPage() {
   // Render
   // -------------------------
   return (
-    <div className="flex h-screen bg-white relative">
+    <div className="flex h-screen bg-white relative dark:bg-black">
       <Sidebar
         activeId={conversationId}
         onSelect={handleSelectConversation}
